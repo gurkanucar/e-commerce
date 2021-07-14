@@ -1,6 +1,6 @@
-package com.gucarsoft.user.repository;
+package user.repository;
 
-import com.gucarsoft.user.model.User;
+import user.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

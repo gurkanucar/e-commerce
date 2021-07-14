@@ -1,6 +1,6 @@
-package com.gucarsoft.user.exception;
+package user.exception;
 
-import org.jetbrains.annotations.NotNull;
+import com.sun.istack.NotNull;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,11 +16,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class GeneralExceptionHandler  extends ResponseEntityExceptionHandler {
+public class GeneralExceptionHandler extends ResponseEntityExceptionHandler {
 
     @NotNull
+
     @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, @NotNull HttpHeaders headers,
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, @NotNull  HttpHeaders headers,
                                                                   HttpStatus status,
                                                                   @NotNull WebRequest request) {
         Map<String , Object> body = new LinkedHashMap<>();
@@ -37,7 +38,7 @@ public class GeneralExceptionHandler  extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(UserNotFoundException.class)
-    public ResponseEntity<?> userNotFoundExceptionHandler(UserNotFoundException exception){
+    public ResponseEntity<?> customerNotFoundExceptionHandler(UserNotFoundException exception){
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 

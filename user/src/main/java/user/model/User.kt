@@ -1,4 +1,5 @@
-package com.gucarsoft.user.model
+package user.model
+
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
@@ -9,10 +10,10 @@ data class User(
     @field:Id
     @field:GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
-    val mail: String,
-    val firstName: String,
-    val surname: String,
-    val middleName: String,
-) {
+    val mail: String?,
+    val firstName: String?,
+    val lastName: String?,
+    val middleName: String?,
+){
 
 }
